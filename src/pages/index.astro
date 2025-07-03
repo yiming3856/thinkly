@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
@@ -11,7 +10,6 @@ import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
 
 const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
@@ -45,15 +43,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       <p class="mt-1 text-lg text-gray-700 dark:text-gray-300">
         {SITE.desc}
       </p>
-
-      {
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">我的社交账号:</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
 
     <Hr />
