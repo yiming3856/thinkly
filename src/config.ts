@@ -1,9 +1,9 @@
 export const SITE = {
   website: "https://thinkly.cc/", // 你的网站域名
-  author: "Notink", // 作者昵称或名称
+  author: "Thinkly", // 作者昵称或名称
   profile: "https://thinkly.cc/", // 作者个人主页链接
   desc: "欢迎来到我的个人博客，这里记录了我的项目实践、学习笔记，以及一些有趣的思考和生活碎片⭐️",
-  title: "Notink", // 网站主标题
+  title: "Thinkly", // 网站主标题
   ogImage: "astropaper-og.jpg", // 默认分享图像
   lightAndDarkMode: true, // 是否启用深/浅色模式切换
   postPerIndex: 8, // 首页显示的文章数量
