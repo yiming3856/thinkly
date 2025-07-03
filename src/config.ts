@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://thinkly.cc/", // 你的网站域名
   author: "Thinkly", // 作者昵称或名称
   profile: "https://thinkly.cc/", // 作者个人主页链接
-  desc: "欢迎来到我的个人博客，这里记录了我的项目实践、学习笔记，以及一些有趣的思考和生活碎片⭐️",
+  desc: "欢迎来到我的个人博客，在这个博客中，我将写下我的项目（我做/我如何做）、我的个人经历以及一些随机的东西⭐⭐⭐️",
   title: "Thinkly", // 网站主标题
   ogImage: "astropaper-og.jpg", // 默认分享图像
   lightAndDarkMode: true, // 是否启用深/浅色模式切换
