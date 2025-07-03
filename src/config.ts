@@ -1,23 +1,23 @@
 export const SITE = {
-  website: "https://thinkly.cc/", // replace this with your deployed domain
-  author: "Notink",
-  profile: "https://thinkly.cc/",
-  desc: "欢迎来到我的个人博客，在这个博客中，我将写下我的项目（我做什么/我如何做）、我的个人经历以及一些随机的东西⭐",
-  title: "Notink",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
-  postPerIndex: 11,
-  postPerPage: 11,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
-  showArchives: true,
-  showBackButton: true, // show back button in post detail
+  website: "https://thinkly.cc/", // 你的网站域名
+  author: "Notink", // 作者昵称或名称
+  profile: "https://thinkly.cc/", // 作者个人主页链接
+  desc: "欢迎来到我的个人博客，这里记录了我的项目实践、学习笔记，以及一些有趣的思考和生活碎片⭐️",
+  title: "Notink", // 网站主标题
+  ogImage: "astropaper-og.jpg", // 默认分享图像
+  lightAndDarkMode: true, // 是否启用深/浅色模式切换
+  postPerIndex: 11, // 首页显示的文章数量
+  postPerPage: 11, // 每页显示的文章数量
+  scheduledPostMargin: 15 * 60 * 1000, // 允许延迟发布的时间间隔（15分钟）
+  showArchives: true, // 是否开启“归档”页面
+  showBackButton: true, // 文章页是否显示返回按钮
   editPost: {
     enabled: true,
-    text: "Edit page",
+    text: "编辑此页",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
-  dynamicOgImage: true,
-  dir: "ltr", // "rtl" | "auto"
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  dynamicOgImage: true, // 是否启用动态 OG 图
+  dir: "auto", // 文本方向 auto/ltr/rtl
+  lang: "zh-CN", // 页面语言（推荐中文站点设置为 zh-CN）
+  timezone: "Asia/Shanghai", // 你的时区（中国大陆建议设为 Asia/Shanghai）
 } as const;
