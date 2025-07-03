@@ -9,10 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        accent: "var(--accent)",
-        foreground: "var(--foreground)",
-        muted: "var(--muted)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        muted: "rgb(var(--foreground-muted) / <alpha-value>)",
       }
     }
   },
