@@ -6,6 +6,7 @@ description: "对于博主而言，除了研究原创文章和拓展流量之外
 pubDatetime: 2025-06-27T12:00:00Z
 author: 作者"
 tags: ["wordpress", "生活"]
+featured: true
 ---
 那天我登入WordPress后台，在升级了几个插件之后，网站突然就显示500错误了。
 
