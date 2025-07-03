@@ -1,22 +1,63 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue}",
-    "./components/**/*.{astro,js,ts}",
-    "./layouts/**/*.{astro,js,ts}",
-    "./pages/**/*.{astro,js,ts}"
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "rgb(var(--background) / <alpha-value>)",
-        foreground: "rgb(var(--foreground) / <alpha-value>)",
-        accent: "rgb(var(--accent) / <alpha-value>)",
-        muted: "rgb(var(--foreground-muted) / <alpha-value>)",
-      }
-    }
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-};
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Variables */
+:root {
+  --foreground: 241 245 249;
+  --background: 12 14 19;
+  --accent: 129 140 248;
+  --foreground-muted: 148 163 184;
+  --background-muted: 23 25 32;
+  --shadow-color: 7 6 25 / 0.75;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: 12 14 19;
+    --background: 241 245 249;
+    --accent: 49 46 129;
+    --foreground-muted: 99 115 129;
+    --background-muted: 255 255 255;
+    --shadow-color: 148 163 184 / 0.15;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply flex min-h-svh flex-col bg-background font-sans text-foreground;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  body::selection {
+    background-color: rgb(var(--accent) / 0.75);
+    color: rgb(var(--background));
+  }
+
+  /* Responsive images and media */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Code block styling */
+  pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Remove horizontal scroll if any */
+  section,
+  footer {
+    @apply mx-auto max-w-app px-4;
+  }
+}
