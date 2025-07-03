@@ -20,11 +20,10 @@ import { SITE } from "@/config";
 }
 
 <script>
-  /* Update Search Param */
   function updateGoBackUrl() {
-    const backButton = document.querySelector("#back-button");
+    const backButton = document.querySelector("#back-button") as HTMLAnchorElement | null;
     const backUrl = sessionStorage.getItem("backUrl");
-    if (backUrl && backButton) {
+    if (backButton && backUrl) {
       backButton.href = backUrl;
     }
   }
