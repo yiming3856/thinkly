@@ -12,18 +12,22 @@ import { SITE } from "@/config";
         href="/"
         class="focus-outline mt-8 mb-2 flex hover:text-foreground/75"
       >
-        <IconChevronLeft class="inline-block w-6 h-6 rtl:rotate-180" />
-        <span class="text-lg">返回首页</span>
+        <IconChevronLeft class="inline-block size-6 rtl:rotate-180" />
+        <span>返回首页</span>
       </LinkButton>
     </div>
   )
 }
 
 <script>
+  /* Update Search Praam */
   function updateGoBackUrl() {
-    const backButton = document.querySelector("#back-button") as HTMLAnchorElement | null;
+    const backButton: HTMLAnchorElement | null =
+      document.querySelector("#back-button");
+
     const backUrl = sessionStorage.getItem("backUrl");
-    if (backButton && backUrl) {
+
+    if (backUrl && backButton) {
       backButton.href = backUrl;
     }
   }
