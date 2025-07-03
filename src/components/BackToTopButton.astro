@@ -25,16 +25,15 @@ import IconArrowNarrowUp from "@/assets/icons/IconArrowNarrowUp.svg";
       class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-8 md:rounded-md"
     ></span>
     <IconChevronLeft class="inline-block rotate-90 md:hidden" />
-    <span class="sr-only text-sm group-hover:text-accent md:not-sr-only">
+    <span class="text-sm group-hover:text-accent">
       <IconArrowNarrowUp class="inline-block size-4" />
-      Back To Top
+      回到顶部
     </span>
   </button>
 </div>
 
 <script is:inline data-astro-rerun>
-  /** Scrolls the document to the top when
-   * the "回到顶部" button is clicked. */
+  /** Scrolls the document to the top when the button is clicked. */
   function backToTop() {
     const rootElement = document.documentElement;
     const btnContainer = document.querySelector("#btt-btn-container");
@@ -44,13 +43,13 @@ import IconArrowNarrowUp from "@/assets/icons/IconArrowNarrowUp.svg";
     if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
       return;
 
-    // Attach click event handler for back-to-top button
+    // 点击回顶部按钮
     backToTopBtn.addEventListener("click", () => {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      document.body.scrollTop = 0; // Safari
+      document.documentElement.scrollTop = 0; // 其他浏览器
     });
 
-    // Handle button visibility according to scroll position
+    // 根据滚动位置控制按钮显示
     let lastVisible = null;
     function handleScroll() {
       const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
@@ -84,5 +83,6 @@ import IconArrowNarrowUp from "@/assets/icons/IconArrowNarrowUp.svg";
       }
     });
   }
+
   backToTop();
 </script>
