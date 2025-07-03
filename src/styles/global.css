@@ -1,63 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./typography.css";
 
-/* Global CSS Variables */
-:root {
-  --foreground: 241 245 249;
-  --background: 12 14 19;
-  --accent: 129 140 248;
-  --foreground-muted: 148 163 184;
-  --background-muted: 23 25 32;
-  --shadow-color: 7 6 25 / 0.75;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root,
+html[data-theme="light"] {
+  --background: #fdfdfd;
+  --foreground: #282728;
+  --accent: #006cac;
+  --muted: #e6e6e6;
+  --border: #ece9e9;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground: 12 14 19;
-    --background: 241 245 249;
-    --accent: 49 46 129;
-    --foreground-muted: 99 115 129;
-    --background-muted: 255 255 255;
-    --shadow-color: 148 163 184 / 0.15;
-  }
+html[data-theme="dark"] {
+  --background: #212737;
+  --foreground: #eaedf3;
+  --accent: #ff6b01;
+  --muted: #343f60bf;
+  --border: #ab4b08;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
 }
 
 @layer base {
+  * {
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
+  }
   html {
-    scroll-behavior: smooth;
+    @apply overflow-y-scroll scroll-smooth;
   }
-
   body {
-    @apply flex min-h-svh flex-col bg-background font-sans text-foreground;
-    line-height: 1.6;
-    font-size: 16px;
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
   }
-
-  body::selection {
-    background-color: rgb(var(--accent) / 0.75);
-    color: rgb(var(--background));
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
   }
-
-  /* Responsive images and media */
-  img,
-  video,
-  iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
-
-  /* Code block styling */
-  pre {
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  /* Remove horizontal scroll if any */
   section,
   footer {
     @apply mx-auto max-w-app px-4;
   }
+}
+
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-4;
+}
+
+/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 1rem;
 }
