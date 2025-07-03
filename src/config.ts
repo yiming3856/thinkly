@@ -6,13 +6,13 @@ export const SITE = {
   title: "Notink", // 网站主标题
   ogImage: "astropaper-og.jpg", // 默认分享图像
   lightAndDarkMode: true, // 是否启用深/浅色模式切换
-  postPerIndex: 11, // 首页显示的文章数量
-  postPerPage: 11, // 每页显示的文章数量
+  postPerIndex: 8, // 首页显示的文章数量
+  postPerPage: 8, // 每页显示的文章数量
   scheduledPostMargin: 15 * 60 * 1000, // 允许延迟发布的时间间隔（15分钟）
   showArchives: true, // 是否开启“归档”页面
   showBackButton: true, // 文章页是否显示返回按钮
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "编辑此页",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
