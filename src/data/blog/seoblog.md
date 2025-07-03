@@ -1,7 +1,7 @@
 ---
 title: "我搭建好了自己的博客！"
 description: "从零开始，用 AstroPaper 和 Netlify 完成了博客的搭建，这是一段记录，也是一种仪式感。"
-date: "2025-07-01T22:40:32.169Z"
+pubDatetime: 2025-06-27T12:00:00Z
 author: "作者"
 tags: ["博客", "搭建记录", "个人网站", "AstroPaper"]
 featured: true
