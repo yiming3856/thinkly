@@ -7,7 +7,10 @@ tags: ["资料"]
 ---
 最近发现很多有需要的东西在电脑上没保存，一直找不到又得重先去搜索，以下是一些常用的代码：
 S-UI面板安装所需的各种经典的版本：
+
+```js
 VERSION=1.3.3 && bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/$VERSION/install.sh) $VERSION
+```
 
 VERSION=1.2.2 && bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/$VERSION/install.sh) $VERSION
 
